@@ -14,29 +14,29 @@ void main(void) {
   vec2 uv = gl_FragCoord.xy /resolution.xy;
   vec3 color;
 
-  uv *=6.32;
+  uv *= 3.;
 
   vec2 i_st = floor(uv);
   vec2 f_st = fract(uv);
 
-  float m_dist =.89;
+  float m_dist =.9;
 
-  for(int y=-3; y <= 3; y ++ ){
-      for(int x = -3; x<= 3; x++){
+  for(int y=-1; y <= 1; y ++ ){
+      for(int x = -1; x<= 1; x++){
         vec2 neighbor = vec2(float(x), float(y));
         vec2 point = random(i_st + neighbor);
-        point = .5 + smoothstep(.2, .6, ( sin(time * .2))* sin(time + 5.2345908*point));
+        point = .5 + .5* sin(time + 5.2345*point);
         vec2 diff = neighbor + point - f_st;
         float dist = length(diff);
         m_dist = min(m_dist, dist);
       }
   }
 
-  color += m_dist;
-  // color.r= .5* color.r;
+  color.r += m_dist;
+  color.g = .5* color.r;
   // color += 1. - step(.02, m_dist);
 
-// color.r += step(.98, f_st.x) + step(.98, f_st.y);
+  // color.r += step(.98, f_st.x) + step(.98, f_st.y);
 
     gl_FragColor = vec4(color,  1.);
 }

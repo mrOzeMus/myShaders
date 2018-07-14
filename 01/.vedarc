@@ -1,0 +1,18 @@
+{
+  "IMPORTED": {
+    "image1": {
+      "PATH": "./image1.png",
+    },
+    "image2": {
+      "PATH": "https://veda.gl/static/images/2.jpg",
+    },
+    "video1": {
+      "PATH": "./video1.mov",
+      "SPEED": "2",  // 2倍速で再生される
+    },
+    "video2": {
+      "PATH": "./video2.mp4",
+      "SPEED": "2",  // 2倍速で再生される
+    },
+  }
+}
