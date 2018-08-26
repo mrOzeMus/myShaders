@@ -5,7 +5,6 @@ uniform vec2 resolution;
 
 #define S(a,b,t) smoothstep(a, b, t);
 
-float angle = 0.;
 float DistLine(vec2 p , vec2 a, vec2 b){
   vec2 pa = p-a;
   vec2 ba = b-a;
